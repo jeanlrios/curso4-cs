@@ -36,5 +36,15 @@ namespace ScreenSound.Filtros
                 Console.WriteLine($"Musica: {musica.Nome} - Artista: {artista}\n");
             }
         }
+
+        public static void FiltrarMusicaTom(List<Musica> musicas, string nota)
+        {
+            var musicaTom = musicas.Where(musica => musica.Tonalidade.Equals(nota)).ToList();
+            Console.WriteLine($"Musicas com o tom de {nota}\n");
+            foreach (var musica in musicaTom)
+            {
+                Console.WriteLine($"Musica: {musica.Nome}\nTom: {musica.Tonalidade}\n");
+            }
+        }
     }
 }
